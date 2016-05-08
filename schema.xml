@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="jeopardy" defaultIdMethod="native">
+	<table name="category" phpName="Category">
+		<column name="id" type="integer" required="true" size="5" primaryKey="true" autoIncrement="true" phpName="Id"/>
+		<column name="title" type="varchar" size="10" required="true" phpName="Title"/>
+		<column name="logo_link" type="varchar" size="32" required="true" phpName="LogoLink" />
+	</table>
+	<table name="statistic" phpName="Statistic">
+		<column name="id" type="integer" required="true" size="5" primaryKey="true" autoIncrement="true" phpName="Id"/>
+		<column name="team_id" type="integer" size="5" required="true" phpName="TeamId"/>
+		<column name="task_id" type="integer" size="5" required="true" phpName="TaskId"/>
+		<column name="flag_done" type="boolean" required="true" phpName="FlagDone"/>
+		<column name="time_done" type="time" required="true" phpName="TimeDone" />
+		<foreign-key foreignTable="team" phpName="Team" refPhpName="statistic">
+      		<reference local="team_id" foreign="id"/>
+    	</foreign-key>
+    	<foreign-key foreignTable="task" phpName="Task" refPhpName="statistic">
+      		<reference local="task_id" foreign="id"/>
+    	</foreign-key>
+	</table>
+	<table name="task" phpName="Task">
+		<column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" phpName="Id"/>
+		<column name="category_id" type="integer" size="5" required="true" phpName="CategoryId"/>
+		<column name="title" type="varchar" size="32" required="true" phpName="Title" />
+		<column name="description" type="LONGVARCHAR" required="true" phpName="Description" />
+		<column name="points" type="integer" size="5" required="true" phpName="Points" />
+		<column name="flag" type="varchar" size="32" required="true" phpName="Flag" />
+		<column name="logo_link" type="varchar" size="32" required="true" phpName="LogoLink" />
+		<foreign-key foreignTable="category" phpName="Category" refPhpName="task">
+      		<reference local="category_id" foreign="id"/>
+    	</foreign-key>
+	</table>
+	<table name="team" phpName="Team">
+		<column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" phpName="Id"/>
+		<column name="name" type="varchar" size="64" required="true" phpName="Name"/>
+		<column name="email" type="varchar" size="64" required="true" phpName="Email"/>
+		<column name="logo_link" type="varchar" size="64" required="true" phpName="LogoLink"/>
+		<column name="city" type="varchar" size="40" required="true" phpName="City"/>
+		<column name="institution" type="varchar" size="64" required="true" phpName="Institution"/>
+		<column name="info" type="LONGVARCHAR" required="true" phpName="Info"/>
+		<column name="registr_date" type="TIMESTAMP" required="true" phpName="RegistrDate"/>
+	</table>
+	<table name="participants" phpName="Participants">
+		<column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" phpName="Id"/>
+		<column name="team_id" type="integer" required="true" phpName="Team_id"/>
+		<column name="pass" type="varchar" size="40" required="true" phpName="Pass"/>
+		<column name="secretkey" type="varchar" size="8" required="true" phpName="Secretkey"/>
+		<column name="id_pass" type="varchar" size="3" required="true" phpName="Id_pass"/>
+		<column name="ip" type="varchar" size="15" phpName="Ip"/>
+		<foreign-key foreignTable="team" phpName="Team" refPhpName="Participants">
+      		<reference local="team_id" foreign="id"/>
+    	</foreign-key>
+	</table>
+	<table name="hint" phpName="Hint">
+		<column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" phpName="Id"/>
+		<column name="task_id" type="integer" required="true" phpName="Task_id"/>
+		<column name="hint_text" type="varchar" required="true" phpName="Hint"/>
+		<foreign-key foreignTable="task" phpName="Task" refPhpName="Hint">
+			<reference local="task_id" foreign="id"/>
+		</foreign-key>
+	</table>
+	<table name="attempt" phpName="Attempt">
+		<column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" phpName="Id"/>
+		<column name="statistic_id" type="integer" required="true" phpName="Statistic_id"/>
+		<column name="answer" type="varchar" required="true" phpName="Answer"/>
+		<foreign-key foreignTable="statistic" phpName="Statistic" refPhpName="Attempt">
+			<reference local="statistic_id" foreign="id"/>
+		</foreign-key>
+	</table>
+</database>

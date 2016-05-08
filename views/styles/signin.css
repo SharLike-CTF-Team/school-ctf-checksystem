@@ -1,0 +1,46 @@
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    padding-top: 0px;
+    padding-bottom:100px;
+    margin-left: 56%;
+    margin-top: 27%;
+}
+
+.icon-signin {
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+}
+.footer-signin{
+    padding-bottom: 10px;
+}
+.logo-signin{
+    padding-top: 10px
+}
+.footer-signin {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  /* Set the fixed height of the footer here */
+}
+
+.btn-block {
+    background-color: #38201d;
+    font-size: 28px;
+    margin-top: 70px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 70px;
+    background: url('../img/loginpage.gif');
+   /* background-size: 1400px 800px;*/
+   background-size: 100% 100%;
+}

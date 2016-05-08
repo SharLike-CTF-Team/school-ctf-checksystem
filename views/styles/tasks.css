@@ -1,0 +1,129 @@
+@font-face {
+    font-family:'a_StamperRgBt';
+    src: url('../fonts/a_StamperRgBt.ttf');
+}
+
+.nav-tabs li {
+    margin-right: 10px;
+}
+
+.nav-tabs li a {
+    background-color: #fff;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus {
+    background-color: #f2f2f2;
+}
+
+.nav-tabs {
+    border-bottom: 0px;
+}
+
+a {
+    color: #ab2020;
+}
+
+.task {
+    width: 18%;
+    margin: 15px 15px 0px 0px !important;
+    float: left;
+    text-align: center;
+}
+
+.footer-signin {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  /* Set the fixed height of the footer here */
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+    background: url('../img/taskpage.jpg');
+    /*background-size: cover;*/
+    font-family: 'a_StamperRgBt';
+}
+
+.listgr {
+    border-bottom: 1px solid #ddd !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+.pnhead {
+    height: 44px;
+    font-size: 12px;
+    border: none;
+}
+
+.hint p{
+    margin: 0px;
+}
+
+.panel {
+    margin: 0px;
+    border: 3px solid transparent;
+}
+
+.panel-body {
+
+}
+
+td{
+    vertical-align: middle;
+}
+
+#menu {
+    margin-left: -15px !important;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.one-task {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) !important;
+    margin: 0px !important;
+}
+
+.footer-signin {
+    width: 40%;
+    background-color: #e7e7e7;
+    color: #333;
+    padding-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-left: 30%;
+}
+
+.footer-signin .container {
+    width: 100%;
+}
+
+.table thead {
+    background-color: #e7e7e7;
+    color: #ab2020;
+}
+
+.table tbody tr {
+    background-color: #00d1a0;
+    opacity: 0.95;
+}
+
+.listgr {
+    font-size: 12px;
+}
+
+.listgr h3 a {
+    font-size: 13px;
+}

@@ -1,0 +1,18 @@
+propel:
+  database:
+      connections:
+          jeopardy:
+              adapter: mysql
+              classname: Propel\Runtime\Connection\ConnectionWrapper
+              dsn: "mysql:host=localhost;dbname="
+              user: 
+              password: 
+              attributes:
+  runtime:
+      defaultConnection: jeopardy
+      connections:
+          - jeopardy
+  generator:
+      defaultConnection: jeopardy
+      connections:
+          - jeopardy
